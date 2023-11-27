@@ -13,13 +13,6 @@ It uses the [.NET CLI](https://docs.microsoft.com/dotnet/articles/core/) to comp
 * `cdk diff`         compare deployed stack with current state
 * `cdk synth`        emits the synthesized CloudFormation template
 
-
-Create the necessary files for the backend function using `dotnet publish`:
-```
-dotnet publish src/Lambdas/GetAllSimple/GetAllSimple.csproj -c Release -o dist/GetAllSimple
-```
-
-
 https://878rhuh3d9.execute-api.eu-west-1.amazonaws.com/prod/items
 
 
@@ -35,18 +28,12 @@ curl for getting items from aws
 curl -X GET --header 'Accept: application/json' 'https://878rhuh3d9.execute-api.eu-west-1.amazonaws.com/prod/items'
 ```
 
-curl for gettting items using a simple lambda function
-
-```shell 
-curl -X GET --header 'Accept: application/json' 'https://878rhuh3d9.execute-api.eu-west-1.amazonaws.com/prod/simple'
-```
-
 curl for posting items to aws
 
 ```shell 
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{ \ 
    "ItemId": "1", \ 
-   "AnExampleField": "stuff", 
+   "AnExampleField": "stuff", \ 
  }' 'https://878rhuh3d9.execute-api.eu-west-1.amazonaws.com/prod/items'
 ```
 

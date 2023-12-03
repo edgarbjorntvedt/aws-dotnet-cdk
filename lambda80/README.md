@@ -13,4 +13,9 @@ It uses the [.NET CLI](https://docs.microsoft.com/dotnet/articles/core/) to comp
 * `cdk diff`         compare deployed stack with current state
 * `cdk synth`        emits the synthesized CloudFormation template
 
+# Minimal API
+Intention is to use this as a starting point for a serverless API, but this is not implemented yet.
+
+Read more about the minimal API in
+
 [./minimalapi/README.md](./minimalapi/README.md)

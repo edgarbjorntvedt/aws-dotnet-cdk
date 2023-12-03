@@ -8,7 +8,16 @@ dotnet new web -o minimalapi
 ```
 It was then modified to use the minimal API syntax.
 
-Intention is to use this as a starting point for a serverless API, but this is not implemented yet.
+## TODO
+- Intention is to use this as a starting point for a serverless API, but this is not implemented yet
+  - The base image in the [working lambda example](../../lambda/README.md) in this project is `mcr.microsoft.com/dotnet/sdk:6.0` 
+    which is quite 
+    different the one that is used here `mcr.microsoft.com/dotnet/sdk:8.0`
+- `<PublishAot>true</PublishAot>` is not working yet 
+  - see [Dockerfile-aot](./minimalapi/Dockerfile-aot) 
+  - see [Dockerfile-aot2](./minimalapi/Dockerfile-aot2) 
+
+  for attempts to get it working
 
 ## Local development
 Local development is done using the `dotnet` dev server or using docker

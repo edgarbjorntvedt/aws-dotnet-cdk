@@ -1,0 +1,26 @@
+# Learn about building .NET container images:
+# https://github.com/dotnet/dotnet-docker/blob/main/samples/README.md
+FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /source
+
+# copy csproj and restore as distinct layers
+COPY *.csproj .
+RUN dotnet restore 
+
+# copy and publish app and libraries
+COPY . .
+RUN dotnet publish --no-restore -o /app
+
+
+# Enable globalization and time zones:
+# https://github.com/dotnet/dotnet-docker/blob/main/samples/enable-globalization.md
+# final stage/image
+FROM mcr.microsoft.com/dotnet/runtime:8.0
+WORKDIR /app
+COPY --from=build /app .
+USER $APP_UID
+
+EXPOSE 80
+ENTRYPOINT ["dotnet", "MyApplication.dll"]
+# ENTRYPOINT ["ls", "-laR"]
+# ENTRYPOINT ["pwd"]

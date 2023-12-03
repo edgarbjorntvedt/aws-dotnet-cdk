@@ -25,7 +25,7 @@ namespace Lambda80
                 new DockerImageFunctionProps()
                 {
                     Code = DockerImageCode.FromImageAsset(
-                        "../minimalapi",
+                        "minimalapi",
                         new AssetImageCodeProps()
                         {
                             File = "Dockerfile"

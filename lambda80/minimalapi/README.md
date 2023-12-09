@@ -14,8 +14,8 @@ It was then modified to use the minimal API syntax.
     which is quite 
     different the one that is used here `mcr.microsoft.com/dotnet/sdk:8.0`
 - `<PublishAot>true</PublishAot>` is not working yet 
-  - see [Dockerfile-aot](./minimalapi/Dockerfile-aot) 
-  - see [Dockerfile-aot2](./minimalapi/Dockerfile-aot2) 
+  - see [Dockerfile-aot](./Dockerfile-aot) 
+  - see [Dockerfile-aot2](./Dockerfile-aot2) 
 
   for attempts to get it working
 
